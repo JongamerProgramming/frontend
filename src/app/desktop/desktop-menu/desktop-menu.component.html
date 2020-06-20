@@ -1,0 +1,12 @@
+<div id="desktop-menu">
+  <button (click)="startMenu.emit()" id="startbutton"><img alt="" draggable="false"
+      src="../../../assets/desktop/img/startbutton.svg" /></button>
+  <div id="tasks">
+    <span class="task-icon" *ngFor="let window of windowManager.taskList">
+      <img (click)="activateOrMinimize(window)" [src]="window.icon" alt="" draggable="false">
+    </span>
+    <div id="clock">
+      <span>{{now.toLocaleTimeString()}}</span>
+    </div>
+  </div>
+</div>

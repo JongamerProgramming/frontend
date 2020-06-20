@@ -1,0 +1,85 @@
+@import "variables";
+
+#desktop-menu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5.5%;
+  border-width: 1px 0 0 0;
+  border-style: solid solid solid solid;
+  border-color: #00000033 #000000 #000000 #000000;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(26, 26, 26, 0.5)
+  );
+  user-select: none;
+}
+
+#startbutton {
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  z-index: 100;
+  height: 85%;
+
+  img {
+    height: 100%;
+  }
+
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transition: transform 0.2s;
+    transform: scale(1.05);
+  }
+}
+
+#tasks {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  .task-icon {
+    margin-left: 1.5%;
+    height: 65%;
+
+    img {
+      height: 100%;
+    }
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transition: transform 0.2s;
+      transform: scale(1.05);
+    }
+  }
+
+  #clock {
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+    color: $white;
+  }
+}

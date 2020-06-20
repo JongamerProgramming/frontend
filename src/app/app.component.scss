@@ -1,0 +1,15 @@
+@import "variables";
+
+#version-info {
+  font-family: $default-font;
+  position: absolute;
+  text-align: right;
+  right: 1em;
+  color: #696969;
+  user-select: none;
+  pointer-events: none;
+}
+
+#animation-container {
+  display: contents;
+}

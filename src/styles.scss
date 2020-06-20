@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import "variables";
+@import "controls";
+
+app-root {
+  width: 100%;
+  height: 100%;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: $default-font;
+}

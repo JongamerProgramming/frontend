@@ -1,0 +1,187 @@
+@use 'sass:color';
+@import "variables";
+
+
+#startmenu {
+  width: 25%;
+  height: 65%;
+  position: fixed;
+  bottom: 5.7%;
+  padding: 1.5% 1.5% 5.5% 2%;
+  background-color: $start-menu-background;
+  color: $white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  border-top: 1px solid rgba(199, 199, 199, 0.5);
+  border-right: 1px solid rgba(199, 199, 199, 0.5);
+
+  img {
+    height: auto;
+    width: 7.5%;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  #info {
+    margin-left: 2%;
+    height: 3%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10%;
+
+    #profile-icon {
+      width: 64px;
+      height: 64px;
+      filter: invert(0.8);
+      margin-right: 1em;
+    }
+
+    #user {
+      font-size: 2rem;
+    }
+
+    #online {
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  #bugreport {
+    margin-left: 2%;
+    justify-content: center;
+    font-size: 0.9rem;
+    height: 5%;
+
+    p {
+      .button {
+        color: grey;
+        display: inline;
+        align-items: normal;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  #programs {
+    width: 85%;
+    height: calc(85% - 2px);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 2%;
+
+    #linkages {
+      height: 100%;
+      overflow-y: auto;
+
+      &:vertical,
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        line-height: 36px;
+        cursor: pointer;
+
+        .icon {
+          margin-right: 9px;
+        }
+
+        .sub-menu {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          box-sizing: border-box;
+          width: 50%;
+          line-height: 36px;
+          color: $white;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+          border: 1px solid rgba(199, 199, 199, 0.5);
+          z-index: 1;
+          cursor: default;
+
+          .device {
+            outline: none;
+            padding: 0 5px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #111;
+            }
+
+            &.disabled {
+              pointer-events: none;
+
+              &:hover {
+                background-color: unset;
+              }
+            }
+
+            &.active {
+              color: green;
+            }
+
+            .power {
+              color: red;
+
+              &.online {
+                color: green;
+              }
+            }
+
+          }
+
+        }
+
+        &:hover > .sub-menu {
+          display: block;
+        }
+
+      }
+
+    }
+
+  }
+
+  .search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.75%;
+    border: none;
+    font-size: 12pt;
+    outline: none !important;
+    color: white;
+    background-color: rgba(66, 66, 66, 0.6);
+    border-radius: 2px;
+  }
+
+  #logout {
+    padding-left: 2%;
+    height: 5.5%;
+
+    display: flex;
+    align-items: center;
+    line-height: 36px;
+    cursor: pointer;
+
+    .icon {
+      margin-right: 9px;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+}

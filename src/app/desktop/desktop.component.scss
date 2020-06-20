@@ -1,0 +1,58 @@
+@import "variables";
+
+#desktop-surface {
+  width: 100%;
+  height: 100%;
+  background: $black url("../../assets/desktop/backgrounds/cry_crack.png")
+    bottom/cover no-repeat;
+  box-sizing: content-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  #version-info {
+    text-align: right;
+    margin-right: 1em;
+    color: #696969;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .linkage {
+    color: $white;
+    position: absolute;
+    width: 85px;
+    padding: 10px 0;
+    border-radius: 10px;
+    height: auto;
+    text-align: center;
+    font-family: $default-font;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+    &.not-allowed {
+      background-color: rgba(50, 0, 0, 100) !important;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      padding-bottom: 5px;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: rgba(252, 236, 239, 0.1);
+      box-shadow: inset 0 0 1.5px 1.5px rgba(0, 0, 0, 0.45);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.45);
+      box-shadow: inset 0 0 1.5px 1.5px rgba(0, 0, 0, 0.45);
+    }
+  }
+}

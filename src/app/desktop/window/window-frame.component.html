@@ -1,0 +1,28 @@
+<div (mousedown)="windowManager.focusWindow(delegate);"
+     [class.active]="delegate.position.active" [class.maximized]="delegate.position.maximized"
+     [style.display]="delegate.position.minimized ? 'none' : 'flex'" [style.height.px]="delegate.position.height"
+     [style.width.px]="delegate.position.width"
+     class="window">
+  <div (dblclick)="maximize()" (mousedown)="$event.target.closest('.window-icons') || startDragging($event)"
+       class="window-header">
+    <img [src]="delegate.icon" alt="" class="window-icon" draggable="false" height="25px" width="30px"/>
+    <span class="window-title">{{delegate.title}}</span>
+    <div class="window-icons">
+      <svg (click)="minimize()" class="minimize-icon" height="20" stroke="white" width="20">
+        <line stroke-width="2" x1="2" x2="18" y1="15" y2="15"></line>
+      </svg>
+      <svg (click)="maximize()" *ngIf="delegate.constraints.maximizable" class="maximize-icon" height="20"
+           stroke="white" width="20">
+        <rect fill="transparent" height="16" stroke-width="2" width="16" x="2" y="2"></rect>
+      </svg>
+      <svg (click)="close()" class="close-icon" height="20" stroke="white" width="20">
+        <line stroke-width="2" x1="2" x2="18" y1="2" y2="18"></line>
+        <line stroke-width="2" x1="18" x2="2" y1="2" y2="18"></line>
+      </svg>
+    </div>
+  </div>
+
+  <div class="window-content">
+    <ng-template appWindowPlace></ng-template>
+  </div>
+</div>
