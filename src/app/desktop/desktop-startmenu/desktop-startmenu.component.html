@@ -1,6 +1,10 @@
 <div id="startmenu">
   <div id="info">
-    <img id="profile-icon" src="../../../assets/desktop/img/user_1.svg" alt=""/>
+    <img
+      id="profile-icon"
+      src="../../../assets/desktop/img/user_1.svg"
+      alt=""
+    />
     <div>
       <p id="user">{{ websocket.account.name }}</p>
       <p id="online">online: {{ websocket.onlinePlayers }}</p>
@@ -11,36 +15,86 @@
       Report a bug through
       <span (click)="openBugReportPageGitHub()" class="button">GitHub</span> or
       <span (click)="openBugReportPageForm()" class="button">Form</span>.
-      <span><a class="button" href="https://the-morpheus.de/#signup" target="_blank">Imprint</a></span>
+      <span
+        ><a
+          class="button"
+          href="https://the-morpheus.de/#signup"
+          target="_blank"
+          >Imprint</a
+        ></span
+      >
     </p>
   </div>
   <div id="programs">
     <div id="linkages">
       <div class="button">
-        <img src="../../../assets/device/laptop_front.svg" alt="" class="icon">
+        <img
+          src="../../../assets/device/laptop_front.svg"
+          alt=""
+          class="icon"
+        />
         Computer
         <div class="sub-menu">
-          <div *ngFor="let device of parent.devices" class="device" [class.disabled]="!device.powered_on"
-               routerLink="/desktop" [queryParams]="{ device: device.uuid }" routerLinkActive="active">
-            {{device.name}} /
-            <span class="power" [class.online]="device.powered_on">{{device.powered_on ? 'Online' : 'Offline'}}</span>
+          <div
+            *ngFor="let device of parent.devices"
+            class="device"
+            [class.disabled]="!device.powered_on"
+            routerLink="/desktop"
+            [queryParams]="{ device: device.uuid }"
+            routerLinkActive="active"
+          >
+            {{ device.name }} /
+            <span class="power" [class.online]="device.powered_on">{{
+              device.powered_on ? "Online" : "Offline"
+            }}</span>
           </div>
-          <div class="device" (click)="parent.hideStartMenu()" routerLink="/device"
-               [queryParams]="{ device: parent.activeDevice.uuid }">
+          <div
+            class="device"
+            (click)="parent.hideStartMenu()"
+            routerLink="/device"
+            [queryParams]="{ device: parent.activeDevice.uuid }"
+          >
             Control Center
           </div>
         </div>
       </div>
-      <div (click)="parent.openProgramWindow(linkage); parent.hideStartMenu()"
-           *ngFor="let linkage of search(searchTerm)" class="button">
-        <img [src]="linkage.icon" alt="" class="icon"/>
-        {{linkage.displayName}}
+      <div
+        (click)="parent.openProgramWindow(linkage); parent.hideStartMenu()"
+        *ngFor="let linkage of search(searchTerm)"
+        class="button"
+      >
+        <img [src]="linkage.icon" alt="" class="icon" />
+        {{ linkage.displayName }}
       </div>
     </div>
-    <input [(ngModel)]="searchTerm" aria-label="Search" class="search" placeholder="Search"/>
+    <input
+      [(ngModel)]="searchTerm"
+      aria-label="Search"
+      class="search"
+      placeholder="Search"
+    />
   </div>
   <div (click)="logout()" class="button" id="logout">
-    <img src="../../../assets/desktop/img/logoutbutton.svg" alt="" class="icon"/>
+    <img
+      src="../../../assets/desktop/img/logoutbutton.svg"
+      alt=""
+      class="icon"
+    />
     Logout
+  </div>
+
+  <div
+    (click)="shutdown()"
+    class="button"
+    id="shutdown"
+    routerLink="/device"
+    [queryParams]="{ device: parent.activeDevice.uuid }"
+  >
+    <img
+      src="../../../assets/desktop/img/computer_on_off.svg"
+      alt=""
+      class="icon"
+    />
+    Herunterfahren
   </div>
 </div>

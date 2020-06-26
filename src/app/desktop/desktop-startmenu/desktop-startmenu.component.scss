@@ -1,7 +1,6 @@
 @use 'sass:color';
 @import "variables";
 
-
 #startmenu {
   width: 25%;
   height: 65%;
@@ -140,19 +139,14 @@
                 color: green;
               }
             }
-
           }
-
         }
 
         &:hover > .sub-menu {
           display: block;
         }
-
       }
-
     }
-
   }
 
   .search {
@@ -168,6 +162,20 @@
   }
 
   #logout {
+    padding-left: 2%;
+    height: 5.5%;
+
+    display: flex;
+    align-items: center;
+    line-height: 36px;
+    cursor: pointer;
+
+    .icon {
+      margin-right: 9px;
+    }
+  }
+
+  #shutdown {
     padding-left: 2%;
     height: 5.5%;
 
