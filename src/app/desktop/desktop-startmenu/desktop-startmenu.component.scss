@@ -70,7 +70,7 @@
 
   #programs {
     width: 85%;
-    height: calc(85% - 2px);
+    height: calc(85% - 2em);
 
     display: flex;
     flex-flow: column nowrap;
@@ -163,7 +163,8 @@
 
   #logout {
     padding-left: 2%;
-    height: 5.5%;
+    padding-bottom: 0.4%;
+    margin: 0.4%;
 
     display: flex;
     align-items: center;
@@ -177,7 +178,8 @@
 
   #shutdown {
     padding-left: 2%;
-    height: 5.5%;
+    padding-bottom: 0.4%;
+    margin: 0.4%;
 
     display: flex;
     align-items: center;
